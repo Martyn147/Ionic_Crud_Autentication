@@ -1,0 +1,7 @@
+{
+  "name": "ionic-firebase-crud-autentication",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

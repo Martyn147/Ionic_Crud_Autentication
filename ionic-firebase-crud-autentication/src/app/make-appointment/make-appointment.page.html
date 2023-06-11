@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar class="ios hydrated">
+    <ion-title class="ios title-ios hydrated">Nuevo Estudiante</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list lines="full">
+    <form [formGroup]="bookingForm" (ngSubmit)="formSubmit()">
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input formControlName="name" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" type="text" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Telefono</ion-label>
+        <ion-input formControlName="mobile" type="text" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Aporte 1</ion-label>
+        <ion-input formControlName="nota1" type="number" [(ngModel)]="aportes[0]" (ionChange)="calcularResultado()" min="0" max="10"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Aporte 2</ion-label>
+        <ion-input formControlName="nota2" type="number" [(ngModel)]="aportes[1]" (ionChange)="calcularResultado()" min="0" max="10"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Aporte 3</ion-label>
+        <ion-input formControlName="nota3" type="number" [(ngModel)]="aportes[2]" (ionChange)="calcularResultado()" min="0" max="10"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Aporte 4</ion-label>
+        <ion-input formControlName="nota4" type="number" [(ngModel)]="aportes[3]" (ionChange)="calcularResultado()" min="0" max="10"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Aporte 5</ion-label>
+        <ion-input formControlName="nota5" type="number" [(ngModel)]="aportes[4]" (ionChange)="calcularResultado()" min="0" max="10"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Resultado</ion-label>
+        <ion-input formControlName="total" type="number" readonly="true" [value]="resultado.toFixed(2)"></ion-input>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" shape="full" expand="block">Crear Estudiante</ion-button>
+        </ion-col>
+      </ion-row>
+      
+    </form>
+  </ion-list>
+</ion-content>
